@@ -1,3 +1,5 @@
+#This Project Utilies The Following Superstore Data:
+
 CREATE TABLE superstore (
     item_id INTEGER PRIMARY KEY,
     item_name TEXT,
@@ -24,3 +26,41 @@ VALUES
     (13, 'Slow Cooker', 'Appliances', 49.95, 30, 4.7),
     (14, 'Cutlery Set', 'Kitchen Supplies', 34.50, 40, 4.4),
     (15, 'Cozy Throw Blanket', 'Furnishings', 24.99, 100, 4.2);
+
+#Shows Statistic of the sum of prices of items in superstore
+SELECT SUM (price)
+FROM superstore;
+
+#Shows the average prince for items in superstore.
+SELECT AVG (price)
+FROM superstore;
+
+#Shows the items that are the less expensive in the superstore.
+SELECT MIN (price)
+FROM superstore;
+
+#Shows the items in the suprestore that are the most expensive. 
+SELECT MAX (price)
+FROM superstore;
+
+#Shows the amount of itams and there prices in the superstore
+SELECT COUNT (price)
+FROM superstore;
+
+#Shows all the items the superstore is selling.
+Select* 
+FROM superstore
+ORDER BY (price);
+
+#Shows the number of items left in superstore.
+Select (stock_quantity), Item_name
+FROM superstore;
+
+#Shows the statistic of items by category (Department) in the superstore.
+select (category), item_name
+From superstore;
+
+#Show a statistic about the price for items in the category of "Kitchen Supplies". 
+SELECT avg(price)
+FROM superstore
+WHERE category="Kitchen Supplies"
